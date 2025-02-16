@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 23:44:04 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/16 22:13:00 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/16 23:14:56 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ typedef struct all_data
     void *enemy;
 }                  a_data;
 
-
 void ft_exit(int flag);
 void free_2darr(char **arr);
 int check_path(char *path, a_data *box);
@@ -57,5 +56,9 @@ char **get_map(a_data *box);
 void ft_reset_file(a_data *box);
 int get_size_map(a_data *box);
 void check_lent_size(a_data *box, int i);
+void check_top_wall(a_data *box);
+void check_bottom_wall(a_data *box);
+void check_side_walls(a_data *box);
+void check_wall(a_data *box);
 
 #endif

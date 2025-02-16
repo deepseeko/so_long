@@ -1,14 +1,17 @@
 NAME = so_long
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror
+#-g3 -fsanitize=address
 RM = rm -f
 MLCFLAGS = -Imlx -lXext -lX11
 SRCS = game/main.c \
 	game/checker.c \
 	game/clear.c \
 	game/init_data.c \
+	game/check_wall.c \
 	get_next_line/get_next_line.c \
 	get_next_line/get_next_line_utils.c \
+
 
 OBJS = $(SRCS:.c=.o)
 

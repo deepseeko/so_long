@@ -6,12 +6,13 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 13:50:11 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/16 22:45:21 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/16 23:32:00 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
 # include <fcntl.h>
+
 
 int check_path(char *path, a_data *box)
 {
@@ -52,6 +53,7 @@ void check_lent_size(a_data *box, int i)
     box->size_map[0] = i;
     box->size_map[1] = len;
 }
+
 void ft_reset_file(a_data *box)
 {
     close(box->fd);
@@ -66,8 +68,6 @@ int get_size_map(a_data *box)
 
     i = 0;
     flag = 1;
-    printf("path = %s\n", box->path);
-    printf("fd = %d\n", box->fd);
     while(flag)
     {
         line = get_next_line(box->fd);
@@ -100,23 +100,27 @@ char **get_map(a_data *box)
     while(box->map[i] == NULL)
         i--;
     check_lent_size(box, i);
+    check_wall(box);
+    check_char(box);
+    ft_reset_file(box);
     return (box->map);
 }
 
 void check_map(a_data *box)
 {
     int fd;
-    // int i;
+    int i;
 
-    // i = 0;
+    i = 0;
     fd = open(box->path, O_RDONLY);
     box->fd = fd;
     if (fd == -1)
         return (free(box), ft_exit(0));
     get_map(box);
-    // while(box->map[i])
-    // {
-    //     printf("%s\n", box->map[i]);
-    //     i++;
-    // }
+    while(box->map[i])
+    {
+        printf("%s\n", box->map[i]);
+        i++;
+    }
+    // printf("map is valid\n");
 }
