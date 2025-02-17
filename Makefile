@@ -1,6 +1,6 @@
 NAME = so_long
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror #-g3 -fsanitize=address
 RM = rm -f
 MLCFLAGS = -Imlx -lXext -lX11
 SRCS = game/main.c \

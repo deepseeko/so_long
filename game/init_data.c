@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 14:27:38 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/16 22:01:18 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/17 14:41:13 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ a_data *init_data(char **av)
         ft_exit(0);
     check_path(av[1], box);
     check_map(box);
-    
+
     return (box);
 }
-

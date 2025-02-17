@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 21:29:14 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/16 21:30:25 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/17 14:36:56 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ int main(int ac, char **av)
 	if (ac != 2)
 		ft_exit(0);
 	box = init_data(av);
+
 	return (0);
-	(void)box;
 }

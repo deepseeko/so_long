@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 13:50:11 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/17 13:37:57 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/17 14:35:27 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ char **get_map(a_data *box)
     count_char(box);
     ft_reset_file(box);
     check_flood_fill(box);
+    close(box->fd);
     return (box->map);
 }
 
@@ -116,4 +117,5 @@ void check_map(a_data *box)
     if (fd == -1)
         return (free(box), ft_exit(0));
     get_map(box);
+    
 }
