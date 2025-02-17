@@ -1,7 +1,6 @@
 NAME = so_long
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
-#-g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 RM = rm -f
 MLCFLAGS = -Imlx -lXext -lX11
 SRCS = game/main.c \
@@ -9,6 +8,8 @@ SRCS = game/main.c \
 	game/clear.c \
 	game/init_data.c \
 	game/check_wall.c \
+	game/check_char.c \
+	game/check_flood_fill.c \
 	get_next_line/get_next_line.c \
 	get_next_line/get_next_line_utils.c \
 

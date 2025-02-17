@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 14:11:00 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/16 21:47:20 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/17 10:01:20 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 void ft_exit(int flag)
 {
     if (flag == 0)
-        ft_putstr_fd("Error\n", 2);
-    if (flag == 1)
         ft_putstr_fd("Error\n", 2);
     exit(0);
 }
@@ -65,7 +63,7 @@ void free_data(a_data *data)
 void clear_data(a_data *box , int flag)
 {
     if (flag == 1) //3andi path , map
-        return(free_2darr(box->map), free(box), ft_exit(0));
+        return(free_2darr(box->map), free(box), ft_exit(1));
     if (flag == 2) //3andi path , map , copy_map
         return(free_2darr(box->map), free_2darr(box->copy_map), free(box), ft_exit(0));
 }

@@ -6,13 +6,12 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 13:50:11 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/16 23:32:00 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/17 11:08:02 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
 # include <fcntl.h>
-
 
 int check_path(char *path, a_data *box)
 {
@@ -102,7 +101,9 @@ char **get_map(a_data *box)
     check_lent_size(box, i);
     check_wall(box);
     check_char(box);
+    count_char(box);
     ft_reset_file(box);
+    check_flood_fill(box);
     return (box->map);
 }
 
@@ -117,10 +118,4 @@ void check_map(a_data *box)
     if (fd == -1)
         return (free(box), ft_exit(0));
     get_map(box);
-    while(box->map[i])
-    {
-        printf("%s\n", box->map[i]);
-        i++;
-    }
-    // printf("map is valid\n");
 }

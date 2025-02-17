@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 23:44:04 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/16 23:14:56 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/17 10:36:42 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,10 @@ void check_top_wall(a_data *box);
 void check_bottom_wall(a_data *box);
 void check_side_walls(a_data *box);
 void check_wall(a_data *box);
+void check_char(a_data *box);
+void init_zero(a_data *box , int *i , int *j);
+void count_char(a_data *box);
+void check_flood_fill(a_data *box);
+void copy_map(a_data *box);
 
 #endif
