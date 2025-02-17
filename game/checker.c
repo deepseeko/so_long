@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 13:50:11 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/17 11:08:02 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/17 13:37:57 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,9 +110,7 @@ char **get_map(a_data *box)
 void check_map(a_data *box)
 {
     int fd;
-    int i;
 
-    i = 0;
     fd = open(box->path, O_RDONLY);
     box->fd = fd;
     if (fd == -1)

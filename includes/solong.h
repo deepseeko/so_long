@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 23:44:04 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/17 10:36:42 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/17 14:18:06 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,6 @@ typedef struct all_data
     int size_map[2];
     int **map_copy;
     int index_player[2];
-    int index_exit[2];
-    int **index_collect;
-    int **index_enemy;
     void *wall;
     void *exit;
     void *coin;
@@ -65,5 +62,8 @@ void init_zero(a_data *box , int *i , int *j);
 void count_char(a_data *box);
 void check_flood_fill(a_data *box);
 void copy_map(a_data *box);
+void flood_fill(char **map , int x_m, int y_m, int x, int y , char target);
+void check_if_flooded(a_data *box);
+
 
 #endif
