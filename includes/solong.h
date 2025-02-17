@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 23:44:04 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/17 14:18:06 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/17 19:38:09 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,14 @@
 #include "../src/libft.h"
 //#include <mlx.h>
 
+
+#ifndef width_pixel
+# define width_pixel 64
+#endif
+
+#ifndef height_pixel
+# define height_pixel 64
+#endif
 
 typedef struct all_data
 {
