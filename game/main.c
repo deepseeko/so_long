@@ -6,12 +6,11 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 21:29:14 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/17 19:41:22 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/17 21:39:40 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
-#include <mlx.h>
 
 int main(int ac, char **av)
 {

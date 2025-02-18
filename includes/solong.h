@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 23:44:04 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/17 19:38:09 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/17 21:38:58 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 #include "../src/libft.h"
-//#include <mlx.h>
+#include <mlx.h>
 
 
 #ifndef width_pixel
