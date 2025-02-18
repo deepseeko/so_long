@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 23:44:04 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/17 21:38:58 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/18 11:19:53 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,15 @@
 # define height_pixel 64
 #endif
 
+
+typedef struct mlx_data
+{
+    void *mlx;
+    void *win;
+    a_data *game;
+} t_mlx;
+
+
 typedef struct all_data
 {
     char *path;
@@ -41,6 +50,9 @@ typedef struct all_data
     int size_map[2];
     int **map_copy;
     int index_player[2];
+    int screen_w;
+    int screen_h;
+    t_mlx *mlx_data;
     void *wall;
     void *exit;
     void *coin;
@@ -72,6 +84,6 @@ void check_flood_fill(a_data *box);
 void copy_map(a_data *box);
 void flood_fill(char **map , int x_m, int y_m, int x, int y , char target);
 void check_if_flooded(a_data *box);
-
+void free_data_mlx(a_data *box);
 
 #endif
