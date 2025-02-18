@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 21:29:14 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/18 21:03:49 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/18 21:30:59 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,9 +91,16 @@ void update_coin_frame(a_data *box)
 
 int timer_handler(void *param)
 {
+	static int cout;
+
     a_data *box = (a_data *)param;
-	usleep(150000);
-    update_coin_frame(box);
+	//usleep(130000);
+	if (cout % 5700 == 0)
+	{
+		update_coin_frame(box);
+		cout = 0;
+	}
+	cout++;
     return (0);
 }
 
