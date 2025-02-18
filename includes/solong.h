@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 23:44:04 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/18 16:32:04 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/18 20:05:27 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ typedef struct all_data
     t_mlx *mlx_data;
     void *wall;
     void *exit;
-    void *coin;
+    void *coin_frames[9];
     void *player;
     void *enemy;
     void *bg;
