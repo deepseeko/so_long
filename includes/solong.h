@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 23:44:04 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/18 11:19:53 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/18 11:39:08 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,7 @@
 #ifndef height_pixel
 # define height_pixel 64
 #endif
-
-
-typedef struct mlx_data
-{
-    void *mlx;
-    void *win;
-    a_data *game;
-} t_mlx;
-
+typedef struct mlx_data t_mlx;
 
 typedef struct all_data
 {
@@ -59,6 +51,13 @@ typedef struct all_data
     void *player;
     void *enemy;
 }                  a_data;
+
+typedef struct mlx_data
+{
+    void *mlx;
+    void *win;
+    a_data *game;
+} t_mlx;
 
 void ft_exit(int flag);
 void free_2darr(char **arr);

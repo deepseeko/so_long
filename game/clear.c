@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 14:11:00 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/18 11:19:46 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/18 11:52:41 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,13 @@ void free_data_mlx(a_data *box)
     free_copy_map(box);
     if (box->mlx_data)
     {
+        if (box->mlx_data->win)
+            mlx_destroy_window(box->mlx_data->mlx, box->mlx_data->win);
         if (box->mlx_data->mlx)
-            mlx_destroy_display(mlx_data->mlx);
+        {
+            mlx_destroy_display(box->mlx_data->mlx);
+            free(box->mlx_data->mlx);
+        }
         free(box->mlx_data);
     }
     free(box);
@@ -91,6 +96,6 @@ void clear_data(a_data *box , int flag)
         return(free_2darr(box->map), free(box), ft_exit(0));
     if (flag == 2) //3andi path , map , copy_map
         return(free_2darr(box->map), free_copy_map(box), free(box), ft_exit(0));
-    if (flag == 3) // 3andi path , map , copy_map , mlx_data
+    if (flag == 3) // 3andi path , map , copy_map , mlx_data , win , mlx
         return(free_data_mlx(box), ft_exit(0));
 }

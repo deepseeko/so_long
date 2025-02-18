@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 21:29:14 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/18 11:22:16 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/18 11:41:39 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void load_textures(t_mlx *mlx_data)
 	if (!mlx_data->game->wall || !mlx_data->game->exit
 			|| !mlx_data->game->coin || !mlx_data->game->player
 				|| !mlx_data->game->enemy)
-		return (clear_data(mlx_data->game, 2), ft_exit(0));
+		return (clear_data(mlx_data->game, 3), ft_exit(0));
 }
 
 void init_win(a_data *box)
@@ -42,12 +42,12 @@ void init_win(a_data *box)
 	mlx_get_screen_size(box->mlx_data->mlx, &box->screen_w, &box->screen_h);
 	if (wigth > box->screen_w || height > box->screen_h)
 		return (clear_data(box, 3));
-	mlx_data->win = mlx_new_window(mlx_data->mlx, wigth, height, "so_long");
-	if (!mlx_data->win)
+	box->mlx_data->win = mlx_new_window(box->mlx_data->mlx, wigth, height, "so_long");
+	if (!box->mlx_data->win)
 		return (clear_data(box, 3), ft_exit(0));
 	load_textures(box->mlx_data);
-	
-	mlx_loop(mlx_data->mlx);
+
+	mlx_loop(box->mlx_data->mlx);
 }
 
 int main(int ac, char **av)
