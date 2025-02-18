@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 23:44:04 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/18 11:39:08 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/18 16:32:04 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 #include "../src/libft.h"
-#include <mlx.h>
+#include </home/ybouanan/Downloads/minilibx-linux/mlx.h>
 
 
 #ifndef width_pixel
@@ -50,6 +50,7 @@ typedef struct all_data
     void *coin;
     void *player;
     void *enemy;
+    void *bg;
 }                  a_data;
 
 typedef struct mlx_data
