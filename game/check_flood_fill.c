@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 10:21:43 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/19 20:41:14 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/19 23:44:22 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void get_index_enemy(a_data *box)
 		j = 0;
 		while(j < box->size_map[1])
 		{
-			if (box->copy_map[i][j] == 'E')
+			if (box->copy_map[i][j] == 'M')
 			{
 				box->index_enemy[0] = i;
 				box->index_enemy[1] = j;

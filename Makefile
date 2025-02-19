@@ -11,6 +11,7 @@ SRCS = game/main.c \
 	game/init_data.c \
 	game/check_wall.c \
 	game/check_char.c \
+	game/render_enemy.c \
 	game/check_flood_fill.c \
 	get_next_line/get_next_line.c \
 	get_next_line/get_next_line_utils.c \
