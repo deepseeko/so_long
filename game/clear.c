@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 14:11:00 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/18 11:52:41 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:22:22 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ void free_data_mlx(a_data *box)
     free(box);
 }
 
+
 void clear_data(a_data *box , int flag)
 {
     if (flag == 1) //3andi path , map
@@ -98,4 +99,5 @@ void clear_data(a_data *box , int flag)
         return(free_2darr(box->map), free_copy_map(box), free(box), ft_exit(0));
     if (flag == 3) // 3andi path , map , copy_map , mlx_data , win , mlx
         return(free_data_mlx(box), ft_exit(0));
+    
 }

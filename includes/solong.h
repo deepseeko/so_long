@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 23:44:04 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/18 20:05:27 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:14:37 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,14 @@
 #ifndef height_pixel
 # define height_pixel 64
 #endif
+
+#define KEY_A 97
+#define KEY_W 119
+#define KEY_D 100
+#define KEY_S 115
+
+
+
 typedef struct mlx_data t_mlx;
 
 typedef struct all_data
@@ -47,7 +55,7 @@ typedef struct all_data
     t_mlx *mlx_data;
     void *wall;
     void *exit;
-    void *coin_frames[9];
+    void *coin_frames[10];
     void *player;
     void *enemy;
     void *bg;

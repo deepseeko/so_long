@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 21:29:14 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/18 21:30:59 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/19 12:14:29 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void load_textures(t_mlx *mlx_data)
     mlx_data->game->coin_frames[6] = mlx_xpm_file_to_image(mlx_data->mlx, "textures/coin_7.xpm", &img_size, &img_size);
     mlx_data->game->coin_frames[7] = mlx_xpm_file_to_image(mlx_data->mlx, "textures/coin_8.xpm", &img_size, &img_size);
     mlx_data->game->coin_frames[8] = mlx_xpm_file_to_image(mlx_data->mlx, "textures/coin_9.xpm", &img_size, &img_size);
+	mlx_data->game->coin_frames[9] = NULL;
     mlx_data->game->player = mlx_xpm_file_to_image(mlx_data->mlx, "textures/player.xpm", &img_size, &img_size);
     //mlx_data->game->enemy = mlx_xpm_file_to_image(mlx_data->mlx, "textures/enemy.xpm", &img_size, &img_size);
     mlx_data->game->bg = mlx_xpm_file_to_image(mlx_data->mlx, "textures/bg.xpm", &img_size, &img_size);
@@ -104,6 +105,34 @@ int timer_handler(void *param)
     return (0);
 }
 
+int handle_keypress(int keycode, a_data *box)
+{
+	//static int moves;
+    int new_x = box->index_player[1];
+    int new_y = box->index_player[0];
+
+    if (keycode == KEY_W)
+        new_y--;
+    else if (keycode == KEY_S)
+        new_y++;
+    else if (keycode == KEY_A)
+        new_x--;
+    else if (keycode == KEY_D)
+        new_x++;
+    else if (keycode == 65307)
+		clear_data(box, 3), ft_exit(0);
+    if (box->map[new_y][new_x] != '1')
+    {
+        box->map[box->index_player[0]][box->index_player[1]] = '0';
+        box->index_player[0] = new_y;
+        box->index_player[1] = new_x;
+        box->map[new_y][new_x] = 'P';
+        render_map(box->mlx_data->mlx, box->mlx_data->win, box->map, box);
+    }
+
+    return (0);
+}
+
 void init_win(a_data *box)
 {
 	int wigth;
@@ -125,6 +154,7 @@ void init_win(a_data *box)
 		return (clear_data(box, 3), ft_exit(0));
 	load_textures(box->mlx_data);
 	render_map(box->mlx_data->mlx, box->mlx_data->win, box->map , box);
+	mlx_key_hook(box->mlx_data->win, handle_keypress, box);
 	mlx_loop_hook(box->mlx_data->mlx, timer_handler, box);
 	mlx_loop(box->mlx_data->mlx);
 }
