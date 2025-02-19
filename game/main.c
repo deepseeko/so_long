@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 21:29:14 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/19 17:54:13 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/19 20:48:55 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void check_load(a_data *box)
 					|| !box->coin_frames[7] || !box->coin_frames[8]
 						|| !box->player || !box->bg)
 		return (clear_data(box, 3), ft_exit(0));
+    if (box->number_of_enemy != 0 && !box->enemy)
+        return (clear_data(box, 3), ft_exit(0));
 }
 
 void load_textures(t_mlx *mlx_data)
@@ -38,7 +40,8 @@ void load_textures(t_mlx *mlx_data)
     mlx_data->game->coin_frames[7] = mlx_xpm_file_to_image(mlx_data->mlx, "textures/coin_8.xpm", &img_size, &img_size);
     mlx_data->game->coin_frames[8] = mlx_xpm_file_to_image(mlx_data->mlx, "textures/coin_9.xpm", &img_size, &img_size);
     mlx_data->game->player = mlx_xpm_file_to_image(mlx_data->mlx, "textures/player.xpm", &img_size, &img_size);
-    //mlx_data->game->enemy = mlx_xpm_file_to_image(mlx_data->mlx, "textures/enemy.xpm", &img_size, &img_size);
+    if (mlx_data->game->number_of_enemy != 0)
+        mlx_data->game->enemy = mlx_xpm_file_to_image(mlx_data->mlx, "textures/enemy.xpm", &img_size, &img_size);
     mlx_data->game->bg = mlx_xpm_file_to_image(mlx_data->mlx, "textures/bg.xpm", &img_size, &img_size);
     check_load(mlx_data->game);
 }
@@ -61,6 +64,8 @@ void render_map(void *mlx, void *win, char **map,a_data *box)
 				mlx_put_image_to_window(mlx, win, box->player, x * 64, y * 64);
             if (map[y][x] == 'E')
 				mlx_put_image_to_window(mlx, win, box->exit, x * 64, y * 64);
+            if (map[y][x] == 'M')
+                mlx_put_image_to_window(mlx, win, box->enemy, x * 64, y * 64);
 			x++;
         }
         y++;
@@ -93,10 +98,10 @@ int timer_handler(void *param)
 	static int cout;
 
     a_data *box = (a_data *)param;
-	//usleep(130000);
+	usleep(130000);
 	if (cout % 5700 == 0)
 	{
-		update_coin_frame(box);
+	    update_coin_frame(box);
 		cout = 0;
 	}
 	cout++;
@@ -122,6 +127,8 @@ int handle_keypress(int keycode, a_data *box)
         if (box->map[new_y][new_x] == 'E' && box->collect != box->number_of_collect)
             return (0);
         box->moves++;
+        if (box->map[new_y][new_x] == 'M')
+            return (ft_putstr_fd("LOSER !!! ya lka3ka3\n",1), clear_data(box, 3), 0);
         update_game_state(box, new_x, new_y);
         render_map(box->mlx_data->mlx, box->mlx_data->win, box->map, box);
         display_stats(box);

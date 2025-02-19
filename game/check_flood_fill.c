@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 10:21:43 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/17 14:23:43 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/19 20:41:14 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,29 @@ void get_index_player(a_data *box)
 	}
 }
 
+void get_index_enemy(a_data *box)
+{
+	int j;
+	int i;
+
+	i = 0;
+	while(i < box->size_map[0])
+	{
+		j = 0;
+		while(j < box->size_map[1])
+		{
+			if (box->copy_map[i][j] == 'E')
+			{
+				box->index_enemy[0] = i;
+				box->index_enemy[1] = j;
+				return ;
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
 void check_flood_fill(a_data *box)
 {
 	int x;
@@ -60,6 +83,8 @@ void check_flood_fill(a_data *box)
 	y = box->size_map[1];
 	copy_map(box);
 	get_index_player(box);
+	if (box->number_of_enemy != 0)
+		get_index_enemy(box);
 	flood_fill(box->copy_map, x, y, box->index_player[0], box->index_player[1], 'F');
 	// int i = 0;
 	// while(i <= box->size_map[0])

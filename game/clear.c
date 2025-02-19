@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 14:11:00 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/19 18:09:28 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/19 20:50:44 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,8 @@ void clear_data(a_data *box, int flag)
             mlx_destroy_image(box->mlx_data->mlx, box->player);
         if (box->bg)
             mlx_destroy_image(box->mlx_data->mlx, box->bg);
+        if (box->number_of_enemy != 0 && box->enemy)
+            mlx_destroy_image(box->mlx_data->mlx, box->enemy);
         mlx_destroy_display(box->mlx_data->mlx);
         free(box->mlx_data->mlx);
         free(box->mlx_data);

@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 23:44:04 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/19 13:00:10 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/19 20:39:01 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ typedef struct all_data
     int size_map[2];
     int **map_copy;
     int index_player[2];
+    int index_enemy[2];
     int screen_w;
     int screen_h;
     t_mlx *mlx_data;
