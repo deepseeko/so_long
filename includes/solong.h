@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 23:44:04 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/19 12:14:37 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/19 13:00:10 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ typedef struct all_data
     int number_of_exit;
     int number_of_player;
     int number_of_enemy;
+    int moves;
+    int collect;
     int size_map[2];
     int **map_copy;
     int index_player[2];
@@ -55,7 +57,7 @@ typedef struct all_data
     t_mlx *mlx_data;
     void *wall;
     void *exit;
-    void *coin_frames[10];
+    void *coin_frames[9];
     void *player;
     void *enemy;
     void *bg;
@@ -93,5 +95,8 @@ void copy_map(a_data *box);
 void flood_fill(char **map , int x_m, int y_m, int x, int y , char target);
 void check_if_flooded(a_data *box);
 void free_data_mlx(a_data *box);
+void display_stats(a_data *box);
+void update_position(int keycode, int *new_x, int *new_y);
+void update_game_state(a_data *box, int new_x, int new_y);
 
 #endif

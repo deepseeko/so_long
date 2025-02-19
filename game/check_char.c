@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 23:32:08 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/17 10:37:25 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/19 13:04:28 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,7 @@ void init_zero(a_data *box , int *i , int *j)
 	box->number_of_exit = 0;
 	box->number_of_player = 0;
 	box->number_of_enemy = 0;
+	box->moves = 0;
+	box->collect = 0;
 }
 
