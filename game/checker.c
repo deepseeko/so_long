@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 13:50:11 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/17 14:35:27 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/19 18:04:24 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ void check_lent_size(a_data *box, int i)
     }
     box->size_map[0] = i;
     box->size_map[1] = len;
+    if(box->size_map[0] < 3 || box->size_map[1] < 3)
+        return (clear_data(box, 1), ft_exit(0));
 }
 
 void ft_reset_file(a_data *box)
@@ -117,5 +119,5 @@ void check_map(a_data *box)
     if (fd == -1)
         return (free(box), ft_exit(0));
     get_map(box);
-    
+
 }

@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 21:29:14 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/19 13:23:19 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/19 17:54:13 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,16 +108,20 @@ int handle_keypress(int keycode, a_data *box)
     int new_x = box->index_player[1];
     int new_y = box->index_player[0];
 
-    update_position(keycode, &new_x, &new_y);
+
     if (keycode == 65307)
     {
         clear_data(box, 3);
         ft_exit(0);
     }
+    if ( keycode != KEY_W && keycode != KEY_S && keycode != KEY_A && keycode != KEY_D)
+        return (0);
+    update_position(keycode, &new_x, &new_y);
     if (box->map[new_y][new_x] != '1')
     {
-		if (new_x != box->index_player[1] || new_y != box->index_player[0] && (box->map[new_y][new_x] =='E' && box->collect == box->number_of_collect))
-			box->moves++;
+        if (box->map[new_y][new_x] == 'E' && box->collect != box->number_of_collect)
+            return (0);
+        box->moves++;
         update_game_state(box, new_x, new_y);
         render_map(box->mlx_data->mlx, box->mlx_data->win, box->map, box);
         display_stats(box);
@@ -151,13 +155,12 @@ void update_game_state(a_data *box, int new_x, int new_y)
     {
         box->collect++;
     }
-	if (box->map[new_y][new_x] == 'E' && box->collect == box->number_of_collect)
+    if (box->map[new_y][new_x] == 'E' && box->collect == box->number_of_collect)
 	{
 		ft_putstr_fd("You win !\n", 1);
 		clear_data(box, 3);
 		ft_exit(0);
 	}
-
     box->map[box->index_player[0]][box->index_player[1]] = '0';
     box->index_player[0] = new_y;
     box->index_player[1] = new_x;

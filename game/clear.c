@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 14:11:00 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/19 12:25:43 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/19 18:09:28 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void free_coin_images(a_data *box)
 
 void clear_data(a_data *box, int flag)
 {
-    if (box->mlx_data)
+    if (flag != 1 && box->mlx_data)
     {
         if (box->mlx_data->win)
             mlx_destroy_window(box->mlx_data->mlx, box->mlx_data->win);

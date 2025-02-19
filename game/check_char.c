@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 23:32:08 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/19 13:04:28 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/19 18:12:41 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void count_char(a_data *box)
 	}
 	if (box->number_of_exit != 1 || box->number_of_player != 1
 		|| box->number_of_collect == 0)
-		return (ft_putstr_fd("error !\n",2),clear_data(box, 1));
+		return (clear_data(box, 1));
 }
 
 void init_zero(a_data *box , int *i , int *j)
