@@ -114,9 +114,9 @@ int handle_keypress(int keycode, a_data *box)
         clear_data(box, 3);
         ft_exit(0);
     }
-    if (box->map[new_y][new_x] != '1' || (box->map[new_y][new_x] =='E' && box->collect == box->number_of_collect))
+    if (box->map[new_y][new_x] != '1')
     {
-		if (new_x != box->index_player[1] || new_y != box->index_player[0])
+		if (new_x != box->index_player[1] || new_y != box->index_player[0] && (box->map[new_y][new_x] =='E' && box->collect == box->number_of_collect))
 			box->moves++;
         update_game_state(box, new_x, new_y);
         render_map(box->mlx_data->mlx, box->mlx_data->win, box->map, box);
