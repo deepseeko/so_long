@@ -12,9 +12,9 @@
 
 #include "../includes/solong.h"
 
-void ft_exit(int flag)
+void	ft_exit(int flag)
 {
-    if (flag == 0)
-        ft_putstr_fd("Error\n", 2);
-    exit(0);
+	if (flag == 0)
+		ft_putstr_fd("Error\n", 2);
+	exit(0);
 }

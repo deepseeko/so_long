@@ -12,15 +12,14 @@
 
 #include "../includes/solong.h"
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
-	a_data *box;
+	a_data	*box;
 
 	if (ac != 2)
 		ft_exit(0);
 	box = init_data(av);
 	init_win(box);
-
 	(void)box;
 	return (0);
 }

@@ -12,16 +12,16 @@
 
 #include "../includes/solong.h"
 
-void get_index_player(a_data *box)
+void	get_index_player(a_data *box)
 {
-	int j;
-	int i;
+	int	j;
+	int	i;
 
 	i = 0;
-	while(i < box->size_map[0])
+	while (i < box->size_map[0])
 	{
 		j = 0;
-		while(j < box->size_map[1])
+		while (j < box->size_map[1])
 		{
 			if (box->copy_map[i][j] == 'P')
 			{
@@ -35,16 +35,16 @@ void get_index_player(a_data *box)
 	}
 }
 
-void get_index_enemy(a_data *box)
+void	get_index_enemy(a_data *box)
 {
-	int j;
-	int i;
+	int	j;
+	int	i;
 
 	i = 0;
-	while(i < box->size_map[0])
+	while (i < box->size_map[0])
 	{
 		j = 0;
-		while(j < box->size_map[1])
+		while (j < box->size_map[1])
 		{
 			if (box->copy_map[i][j] == 'M')
 			{

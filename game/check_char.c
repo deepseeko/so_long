@@ -6,29 +6,29 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 23:32:08 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/19 18:12:41 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:05:00 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
 
-void check_char(a_data *box)
+void	check_char(a_data *box)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	j = 0;
-	while(box->map[i])
+	while (box->map[i])
 	{
 		j = 0;
-		while(box->map[i][j])
+		while (box->map[i][j])
 		{
 			if (box->map[i][j] != '1' && box->map[i][j] != 'M'
 				&& box->map[i][j] != '0' && box->map[i][j] != 'C'
-					&& box->map[i][j] != 'E' && box->map[i][j] != 'P')
+				&& box->map[i][j] != 'E' && box->map[i][j] != 'P')
 			{
-				ft_putstr_fd("Error: Invalid character in the map\n",2);
+				ft_putstr_fd("Error: Invalid character in the map\n", 2);
 				return (clear_data(box, 1), ft_exit(1));
 			}
 			j++;
@@ -37,16 +37,16 @@ void check_char(a_data *box)
 	}
 }
 
-void count_char(a_data *box)
+void	count_char(a_data *box)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	init_zero(box, &i, &j);
-	while(box->map[i])
+	while (box->map[i])
 	{
 		j = 0;
-		while(box->map[i][j])
+		while (box->map[i][j])
 		{
 			if (box->map[i][j] == 'C')
 				box->number_of_collect++;
@@ -61,11 +61,11 @@ void count_char(a_data *box)
 		i++;
 	}
 	if (box->number_of_exit != 1 || box->number_of_player != 1
-		|| box->number_of_collect == 0)
+		|| box->number_of_collect == 0 || box->number_of_enemy >= 1)
 		return (clear_data(box, 1));
 }
 
-void init_zero(a_data *box , int *i , int *j)
+void	init_zero(a_data *box, int *i, int *j)
 {
 	*i = 0;
 	*j = 0;
@@ -76,4 +76,3 @@ void init_zero(a_data *box , int *i , int *j)
 	box->moves = 0;
 	box->collect = 0;
 }
-

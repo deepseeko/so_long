@@ -6,16 +6,15 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 10:21:43 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 15:31:34 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 17:30:00 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
 
-
-void copy_map(a_data *box)
+void	copy_map(a_data *box)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	box->copy_map = malloc(sizeof(char *) * (box->size_map[0] + 1));
@@ -28,57 +27,54 @@ void copy_map(a_data *box)
 	}
 }
 
-void check_flood_fill(a_data *box)
+void	check_flood_fill(a_data *box)
 {
-	int x;
-	int y;
-
-	x = box->size_map[0];
-	y = box->size_map[1];
 	copy_map(box);
 	get_index_player(box);
 	if (box->number_of_enemy != 0)
 		get_index_enemy(box);
-	flood_fill(box->copy_map, x, y, box->index_player[0], box->index_player[1], 'F');
+	flood_fill_helper(box, box->index_player[0],
+		box->index_player[1]);
 	check_if_flooded(box);
-
 }
 
-void flood_fill(char **map , int x_m, int y_m, int x, int y , char target)
+void	flood_fill_helper(a_data *box, int x, int y)
 {
-	if(x < 0 || x >= x_m || y < 0 || y >= y_m || map[x][y] == target)
+	if (x < 0 || x >= box->size_map[0] || y < 0
+		|| y >= box->size_map[1] || box->copy_map[x][y] == 'F')
 		return ;
-	if (map[x][y] == '1')
+	if (box->copy_map[x][y] == '1')
 		return ;
-	if (map[x][y] == 'E')
+	if (box->copy_map[x][y] == 'E')
 	{
-		map[x][y] = 'F';
+		box->copy_map[x][y] = 'F';
 		return ;
 	}
-	map[x][y] = 'F';
-	flood_fill(map, x_m, y_m, x + 1, y, target);
-	flood_fill(map, x_m, y_m, x - 1, y, target);
-	flood_fill(map, x_m, y_m, x, y + 1, target);
-	flood_fill(map, x_m, y_m, x, y - 1, target);
+	box->copy_map[x][y] = 'F';
+	flood_fill_helper(box, x + 1, y);
+	flood_fill_helper(box, x - 1, y);
+	flood_fill_helper(box, x, y + 1);
+	flood_fill_helper(box, x, y - 1);
 }
 
-void check_if_flooded(a_data *box)
+void	check_if_flooded(a_data *box)
 {
-	int x;
-	int y;
-	int i;
-	int j;
+	int	x;
+	int	y;
+	int	i;
+	int	j;
 
-	x = box->size_map[0];
-	y = box->size_map[1];
+	if (!box->copy_map)
+		return (ft_exit(1));
+	x = box->size_map[0] - 1;
+	y = box->size_map[1] - 1;
 	i = 0;
-	while(i <= x)
+	while (i < x)
 	{
 		j = 0;
-		while(j <= y)
+		while (j < y)
 		{
-			if (box->copy_map[i][j] == 'E'
-				|| box->copy_map[i][j] == 'C')
+			if (box->copy_map[i][j] == 'E' || box->copy_map[i][j] == 'C')
 				return (clear_data(box, 2), ft_exit(1));
 			j++;
 		}

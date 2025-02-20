@@ -6,50 +6,57 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 15:34:24 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 15:34:53 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:06:59 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
-# include <fcntl.h>
+#include <fcntl.h>
 
-char **get_map(a_data *box)
+void	check_all(a_data *box, int i)
 {
-    int i;
-
-    i = get_size_map(box);
-    if ( i <= 2)
-        return (clear_data(box, 1), ft_exit(0), box->map);
-    box->map = malloc(sizeof(char *) * (i + 1));
-    if (!box->map)
-       return (clear_data(box, 1), ft_exit(0),box->map);
-    i = 0;
-    box->map[i] = get_next_line(box->fd);
-    while(box->map[i])
-    {
-        i++;
-        box->map[i] = get_next_line(box->fd);
-    }
-    while(box->map[i] == NULL)
-        i--;
-    check_lent_size(box, i);
-    check_wall(box);
-    check_char(box);
-    count_char(box);
-    ft_reset_file(box);
-    check_flood_fill(box);
-    close(box->fd);
-    return (box->map);
+	check_lent_size(box, i - 1);
+	check_wall(box);
+	check_char(box);
+	count_char(box);
+	ft_reset_file(box);
+	check_flood_fill(box);
+	close(box->fd);
 }
 
-void check_map(a_data *box)
+char	**get_map(a_data *box)
 {
-    int fd;
+	int	i;
 
-    fd = open(box->path, O_RDONLY);
-    box->fd = fd;
-    if (fd == -1)
-        return (free(box), ft_exit(0));
-    get_map(box);
+	box->map = NULL;
+	i = get_size_map(box);
+	if (i <= 0)
+		return (clear_data(box, 1), ft_exit(0), NULL);
+	box->map = malloc(sizeof(char *) * (i + 1));
+	if (!box->map)
+		return (clear_data(box, 1), ft_exit(0), NULL);
+	i = 0;
+	box->map[i] = get_next_line(box->fd);
+	if (!box->map[i])
+		return (clear_data(box, 1), ft_exit(0), NULL);
+	while (box->map[i])
+	{
+		i++;
+		box->map[i] = get_next_line(box->fd);
+	}
+	if (i < 3)
+		return (clear_data(box, 1), ft_exit(0), NULL);
+	check_all(box, i);
+	return (box->map);
+}
 
+void	check_map(a_data *box)
+{
+	int	fd;
+
+	fd = open(box->path, O_RDONLY);
+	box->fd = fd;
+	if (fd == -1)
+		return (free(box), ft_exit(0));
+	get_map(box);
 }
