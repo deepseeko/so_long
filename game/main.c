@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 21:29:14 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/19 23:54:56 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 15:57:50 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,13 +99,12 @@ int timer_handler(void *param)
     static int delay_enemy;
 
     a_data *box = (a_data *)param;
-	//usleep(130000);
 	if (cout % 5700 == 0)
 	{
 	    update_coin_frame(box);
 	 	cout = 0;
 	}
-    if (delay_enemy % 100000 == 0)
+    if (delay_enemy % 50000 == 0)
     {
         update_enemy_position(box);
         delay_enemy = 0;

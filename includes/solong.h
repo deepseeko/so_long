@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 23:44:04 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/19 23:24:12 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 15:59:17 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,8 @@ void check_bottom_wall(a_data *box);
 void check_side_walls(a_data *box);
 void check_wall(a_data *box);
 void check_char(a_data *box);
+void get_index_player(a_data *box);
+void get_index_enemy(a_data *box);
 void init_zero(a_data *box , int *i , int *j);
 void count_char(a_data *box);
 void check_flood_fill(a_data *box);

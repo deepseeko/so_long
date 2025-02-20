@@ -12,6 +12,9 @@ SRCS = game/main.c \
 	game/check_wall.c \
 	game/check_char.c \
 	game/render_enemy.c \
+	game/get_index.c \
+	game/get_map.c \
+	game/ft_error.c \
 	game/check_flood_fill.c \
 	get_next_line/get_next_line.c \
 	get_next_line/get_next_line_utils.c \
@@ -28,7 +31,7 @@ $(LIBFT):
 	make -C $(LIBFT_PATH)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS)   $(OBJS) $(LIBFT) $(MLX_FLAG) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MLX_FLAG) -o $(NAME)
 
 %.o: %.c includes/solong.h
 	$(CC) $(CFLAGS) $(MLX_FLAG_WITH_OBJ) -c $< -o $@

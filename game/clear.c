@@ -6,19 +6,11 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 14:11:00 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/19 20:50:44 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 15:56:24 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
-
-
-void ft_exit(int flag)
-{
-    if (flag == 0)
-        ft_putstr_fd("Error\n", 2);
-    exit(0);
-}
 
 void free_2darr(char **arr)
 {
@@ -57,18 +49,6 @@ void free_2dintarr(int **arr, int size)
             i++;
         }
         free(arr);
-    }
-}
-
-void free_data(a_data *data)
-{
-    if (data)
-    {
-        free(data->path);
-        free_2darr(data->map);
-        free_2darr(data->copy_map);
-        free_2dintarr(data->map_copy, data->size_map[0]);
-        free(data);
     }
 }
 
