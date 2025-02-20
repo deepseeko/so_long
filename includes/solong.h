@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 23:44:04 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 15:59:17 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 16:24:07 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,8 +100,15 @@ void check_if_flooded(a_data *box);
 void render_map(void *mlx, void *win, char **map,a_data *box);
 void free_data_mlx(a_data *box);
 void display_stats(a_data *box);
+int handle_keypress(int keycode, a_data *box);
+int timer_handler(void *param);
 void update_position(int keycode, int *new_x, int *new_y);
 void update_game_state(a_data *box, int new_x, int new_y);
 void update_enemy_position(a_data *box);
 int generate_valid_move(a_data *box, int *new_x, int *new_y);
+void init_win(a_data *box);
+void load_textures(t_mlx *mlx_data);
+void check_load(a_data *box);
+void update_coin_frame(a_data *box);
+
 #endif

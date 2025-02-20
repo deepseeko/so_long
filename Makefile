@@ -9,12 +9,19 @@ SRCS = game/main.c \
 	game/checker.c \
 	game/clear.c \
 	game/init_data.c \
+	game/load_textures.c \
 	game/check_wall.c \
 	game/check_char.c \
+	game/render_player.c \
 	game/render_enemy.c \
 	game/get_index.c \
 	game/get_map.c \
 	game/ft_error.c \
+	game/init_win.c \
+	game/stats.c \
+	game/render.c \
+	game/render_coin.c \
+	game/delay_handler.c \
 	game/check_flood_fill.c \
 	get_next_line/get_next_line.c \
 	get_next_line/get_next_line_utils.c \

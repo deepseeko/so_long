@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   delay_handler.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/16 21:29:14 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 16:20:14 by ybouanan         ###   ########.fr       */
+/*   Created: 2025/02/20 16:20:01 by ybouanan          #+#    #+#             */
+/*   Updated: 2025/02/20 16:20:15 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
 
-int main(int ac, char **av)
+int timer_handler(void *param)
 {
-	a_data *box;
+	static int cout;
+    static int delay_enemy;
 
-	if (ac != 2)
-		ft_exit(0);
-	box = init_data(av);
-	init_win(box);
-
-	(void)box;
-	return (0);
+    a_data *box = (a_data *)param;
+	if (cout % 5700 == 0)
+	{
+	    update_coin_frame(box);
+	 	cout = 0;
+	}
+    if (delay_enemy % 50000 == 0)
+    {
+        update_enemy_position(box);
+        delay_enemy = 0;
+    }
+    cout++;
+    delay_enemy++;
+    return (0);
 }
