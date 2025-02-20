@@ -6,13 +6,13 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:18:34 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 18:58:58 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:53:52 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
 
-void	update_coin_frame(a_data *box)
+void	update_coin_frame(t_data *box)
 {
 	static int	frame;
 	int			x;

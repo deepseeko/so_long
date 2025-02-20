@@ -6,13 +6,13 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:03:33 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 16:04:12 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:53:45 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
 
-void	init_win(a_data *box)
+void	init_win(t_data *box)
 {
 	int	wigth;
 	int	height;
@@ -21,8 +21,8 @@ void	init_win(a_data *box)
 	if (!box->mlx_data)
 		return (clear_data(box, 2), ft_exit(0));
 	box->mlx_data->game = box;
-	wigth = box->size_map[1] * width_pixel;
-	height = box->size_map[0] * height_pixel + 64;
+	wigth = box->size_map[1] * WP;
+	height = box->size_map[0] * HP + 64;
 	box->mlx_data->mlx = mlx_init();
 	if (!box->mlx_data->mlx)
 		return (clear_data(box, 2), ft_exit(0));

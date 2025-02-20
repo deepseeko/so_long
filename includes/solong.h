@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 23:44:04 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 17:34:22 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:53:09 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-# ifndef width_pixel
-#  define width_pixel 64
+# ifndef WP
+#  define WP 64
 # endif
 
-# ifndef height_pixel
-#  define height_pixel 64
+# ifndef HP
+#  define HP 64
 # endif
 
 # define KEY_A 97
@@ -59,55 +59,55 @@ typedef struct all_data
 	void				*player;
 	void				*enemy;
 	void				*bg;
-}						a_data;
+}						t_data;
 
 typedef struct mlx_data
 {
 	void				*mlx;
 	void				*win;
-	a_data				*game;
+	t_data				*game;
 }						t_mlx;
 
 void					ft_exit(int flag);
 void					free_2darr(char **arr);
-int						check_path(char *path, a_data *box);
-void					init_path(char *str, a_data *box, char **splited_path);
-a_data					*init_data(char **av);
-void					clear_data(a_data *box, int flag);
-void					free_data(a_data *data);
+int						check_path(char *path, t_data *box);
+void					init_path(char *str, t_data *box, char **splited_path);
+t_data					*init_data(char **av);
+void					clear_data(t_data *box, int flag);
+void					free_data(t_data *data);
 char					*get_next_line(int fd);
-void					check_map(a_data *box);
-char					**get_map(a_data *box);
-void					ft_reset_file(a_data *box);
-int						get_size_map(a_data *box);
-void					check_lent_size(a_data *box, int i);
-void					check_top_wall(a_data *box);
-void					check_bottom_wall(a_data *box);
-void					check_side_walls(a_data *box);
-void					check_wall(a_data *box);
-void					check_char(a_data *box);
-void					get_index_player(a_data *box);
-void					get_index_enemy(a_data *box);
-void					init_zero(a_data *box, int *i, int *j);
-void					count_char(a_data *box);
-void					check_flood_fill(a_data *box);
-void					copy_map(a_data *box);
-void					flood_fill_helper(a_data *box, int x, int y);
-void					check_if_flooded(a_data *box);
+void					check_map(t_data *box);
+char					**get_map(t_data *box);
+void					ft_reset_file(t_data *box);
+int						get_size_map(t_data *box);
+void					check_lent_size(t_data *box, int i);
+void					check_top_wall(t_data *box);
+void					check_bottom_wall(t_data *box);
+void					check_side_walls(t_data *box);
+void					check_wall(t_data *box);
+void					check_char(t_data *box);
+void					get_index_player(t_data *box);
+void					get_index_enemy(t_data *box);
+void					init_zero(t_data *box, int *i, int *j);
+void					count_char(t_data *box);
+void					check_flood_fill(t_data *box);
+void					copy_map(t_data *box);
+void					flood_fill_helper(t_data *box, int x, int y);
+void					check_if_flooded(t_data *box);
 void					render_map(void *mlx, void *win, char **map,
-							a_data *box);
-void					free_data_mlx(a_data *box);
-void					display_stats(a_data *box);
-int						handle_keypress(int keycode, a_data *box);
+							t_data *box);
+void					free_data_mlx(t_data *box);
+void					display_stats(t_data *box);
+int						handle_keypress(int keycode, t_data *box);
 int						timer_handler(void *param);
 void					update_position(int keycode, int *new_x, int *new_y);
-void					update_game_state(a_data *box, int new_x, int new_y);
-void					update_enemy_position(a_data *box);
-int						generate_valid_move(a_data *box, int *new_x,
+void					update_game_state(t_data *box, int new_x, int new_y);
+void					update_enemy_position(t_data *box);
+int						generate_valid_move(t_data *box, int *new_x,
 							int *new_y);
-void					init_win(a_data *box);
+void					init_win(t_data *box);
 void					load_textures(t_mlx *mlx_data);
-void					check_load(a_data *box);
-void					update_coin_frame(a_data *box);
+void					check_load(t_data *box);
+void					update_coin_frame(t_data *box);
 
 #endif

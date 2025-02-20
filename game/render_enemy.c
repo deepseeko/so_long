@@ -6,13 +6,13 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 20:37:38 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 16:42:19 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:53:54 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
 
-void	render_enemy(void *mlx, void *win, a_data *box)
+void	render_enemy(void *mlx, void *win, t_data *box)
 {
 	int	x;
 	int	y;
@@ -31,7 +31,7 @@ void	render_enemy(void *mlx, void *win, a_data *box)
 	}
 }
 
-int	generate_random_move(a_data *box, int *new_x, int *new_y)
+int	generate_random_move(t_data *box, int *new_x, int *new_y)
 {
 	int	x;
 
@@ -54,7 +54,7 @@ int	generate_random_move(a_data *box, int *new_x, int *new_y)
 	return (1);
 }
 
-int	check_if_enemy_stopped(a_data *box)
+int	check_if_enemy_stopped(t_data *box)
 {
 	int	x;
 	int	y;
@@ -73,7 +73,7 @@ int	check_if_enemy_stopped(a_data *box)
 	return (0);
 }
 
-int	generate_valid_move(a_data *box, int *new_x, int *new_y)
+int	generate_valid_move(t_data *box, int *new_x, int *new_y)
 {
 	int	dx;
 	int	dy;
@@ -102,7 +102,7 @@ int	generate_valid_move(a_data *box, int *new_x, int *new_y)
 	return (generate_random_move(box, new_x, new_y), 1);
 }
 
-void	update_enemy_position(a_data *box)
+void	update_enemy_position(t_data *box)
 {
 	int	new_x;
 	int	new_y;

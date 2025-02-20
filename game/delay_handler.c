@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:20:01 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 18:58:42 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:53:26 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ int	timer_handler(void *param)
 {
 	static int	cout;
 	static int	delay_enemy;
-	a_data		*box;
+	t_data		*box;
 
-	box = (a_data *)param;
+	box = (t_data *)param;
 	if (cout % 5700 == 0)
 	{
 		update_coin_frame(box);

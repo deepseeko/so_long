@@ -6,14 +6,14 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 13:50:11 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 15:43:25 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:53:21 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
 #include <fcntl.h>
 
-int	check_path(char *path, a_data *box)
+int	check_path(char *path, t_data *box)
 {
 	char	**path_tree;
 	int		dir;
@@ -36,7 +36,7 @@ int	check_path(char *path, a_data *box)
 		return (free_2darr(path_tree), free(box), ft_exit(0), 0);
 }
 
-void	check_lent_size(a_data *box, int i)
+void	check_lent_size(t_data *box, int i)
 {
 	int	j;
 	int	len;
@@ -55,13 +55,13 @@ void	check_lent_size(a_data *box, int i)
 		return (clear_data(box, 1), ft_exit(0));
 }
 
-void	ft_reset_file(a_data *box)
+void	ft_reset_file(t_data *box)
 {
 	close(box->fd);
 	box->fd = open(box->path, O_RDONLY);
 }
 
-int	get_size_map(a_data *box)
+int	get_size_map(t_data *box)
 {
 	int		i;
 	int		flag;

@@ -6,13 +6,13 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:15:51 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 16:49:10 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:53:48 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
 
-void	check_load(a_data *box)
+void	check_load(t_data *box)
 {
 	if (!box->wall || !box->exit || !box->coin_frames[0] || !box->coin_frames[1]
 		|| !box->coin_frames[2] || !box->coin_frames[3] || !box->coin_frames[4]

@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 14:11:00 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 15:56:24 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:53:23 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	free_2darr(char **arr)
 	free(arr);
 }
 
-void	free_copy_map(a_data *box)
+void	free_copy_map(t_data *box)
 {
 	int	i;
 
@@ -54,7 +54,7 @@ void	free_2dintarr(int **arr, int size)
 	}
 }
 
-void	free_coin_images(a_data *box)
+void	free_coin_images(t_data *box)
 {
 	if (box->coin_frames[0])
 		mlx_destroy_image(box->mlx_data->mlx, box->coin_frames[0]);
@@ -76,7 +76,7 @@ void	free_coin_images(a_data *box)
 		mlx_destroy_image(box->mlx_data->mlx, box->coin_frames[8]);
 }
 
-void	clear_data(a_data *box, int flag)
+void	clear_data(t_data *box, int flag)
 {
 	if (flag != 1 && box->mlx_data)
 	{

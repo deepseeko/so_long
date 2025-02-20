@@ -6,13 +6,13 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:11:32 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 16:37:07 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:53:58 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
 
-void	render_map(void *mlx, void *win, char **map, a_data *box)
+void	render_map(void *mlx, void *win, char **map, t_data *box)
 {
 	int	x;
 	int	y;

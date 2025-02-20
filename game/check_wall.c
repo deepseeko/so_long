@@ -6,13 +6,13 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 23:13:06 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/16 23:23:17 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:53:19 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
 
-void	check_top_wall(a_data *box)
+void	check_top_wall(t_data *box)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ void	check_top_wall(a_data *box)
 	}
 }
 
-void	check_bottom_wall(a_data *box)
+void	check_bottom_wall(t_data *box)
 {
 	int	i;
 	int	j;
@@ -40,7 +40,7 @@ void	check_bottom_wall(a_data *box)
 	}
 }
 
-void	check_side_walls(a_data *box)
+void	check_side_walls(t_data *box)
 {
 	int	j;
 
@@ -53,7 +53,7 @@ void	check_side_walls(a_data *box)
 	}
 }
 
-void	check_wall(a_data *box)
+void	check_wall(t_data *box)
 {
 	check_top_wall(box);
 	check_bottom_wall(box);

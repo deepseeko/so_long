@@ -6,13 +6,13 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 10:21:43 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 17:30:00 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:53:16 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
 
-void	copy_map(a_data *box)
+void	copy_map(t_data *box)
 {
 	int	i;
 
@@ -27,7 +27,7 @@ void	copy_map(a_data *box)
 	}
 }
 
-void	check_flood_fill(a_data *box)
+void	check_flood_fill(t_data *box)
 {
 	copy_map(box);
 	get_index_player(box);
@@ -38,7 +38,7 @@ void	check_flood_fill(a_data *box)
 	check_if_flooded(box);
 }
 
-void	flood_fill_helper(a_data *box, int x, int y)
+void	flood_fill_helper(t_data *box, int x, int y)
 {
 	if (x < 0 || x >= box->size_map[0] || y < 0
 		|| y >= box->size_map[1] || box->copy_map[x][y] == 'F')
@@ -57,7 +57,7 @@ void	flood_fill_helper(a_data *box, int x, int y)
 	flood_fill_helper(box, x, y - 1);
 }
 
-void	check_if_flooded(a_data *box)
+void	check_if_flooded(t_data *box)
 {
 	int	x;
 	int	y;

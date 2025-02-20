@@ -6,13 +6,13 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 23:32:08 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 19:29:13 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:53:13 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
 
-void	check_char(a_data *box)
+void	check_char(t_data *box)
 {
 	int	i;
 	int	j;
@@ -37,7 +37,7 @@ void	check_char(a_data *box)
 	}
 }
 
-void	count_char(a_data *box)
+void	count_char(t_data *box)
 {
 	int	i;
 	int	j;
@@ -65,7 +65,7 @@ void	count_char(a_data *box)
 		return (clear_data(box, 1));
 }
 
-void	init_zero(a_data *box, int *i, int *j)
+void	init_zero(t_data *box, int *i, int *j)
 {
 	*i = 0;
 	*j = 0;

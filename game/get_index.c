@@ -6,13 +6,13 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 15:31:25 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 15:31:45 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:53:35 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
 
-void	get_index_player(a_data *box)
+void	get_index_player(t_data *box)
 {
 	int	j;
 	int	i;
@@ -35,7 +35,7 @@ void	get_index_player(a_data *box)
 	}
 }
 
-void	get_index_enemy(a_data *box)
+void	get_index_enemy(t_data *box)
 {
 	int	j;
 	int	i;

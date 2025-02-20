@@ -6,14 +6,14 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 15:34:24 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 19:06:59 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:53:38 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
 #include <fcntl.h>
 
-void	check_all(a_data *box, int i)
+void	check_all(t_data *box, int i)
 {
 	check_lent_size(box, i - 1);
 	check_wall(box);
@@ -24,7 +24,7 @@ void	check_all(a_data *box, int i)
 	close(box->fd);
 }
 
-char	**get_map(a_data *box)
+char	**get_map(t_data *box)
 {
 	int	i;
 
@@ -50,7 +50,7 @@ char	**get_map(a_data *box)
 	return (box->map);
 }
 
-void	check_map(a_data *box)
+void	check_map(t_data *box)
 {
 	int	fd;
 

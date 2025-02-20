@@ -6,13 +6,13 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:12:59 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 16:38:09 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:53:56 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
 
-int	handle_keypress(int keycode, a_data *box)
+int	handle_keypress(int keycode, t_data *box)
 {
 	int	new_x;
 	int	new_y;

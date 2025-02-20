@@ -6,13 +6,13 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:07:16 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 16:35:44 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:54:01 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
 
-void	update_game_state(a_data *box, int new_x, int new_y)
+void	update_game_state(t_data *box, int new_x, int new_y)
 {
 	if (box->map[new_y][new_x] == 'C')
 	{
@@ -30,7 +30,7 @@ void	update_game_state(a_data *box, int new_x, int new_y)
 	box->map[new_y][new_x] = 'P';
 }
 
-void	display_stats(a_data *box)
+void	display_stats(t_data *box)
 {
 	char	*moves_str;
 	char	*collect_str;
