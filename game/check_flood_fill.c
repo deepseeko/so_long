@@ -66,10 +66,10 @@ void	check_if_flooded(t_data *box)
 
 	if (!box->copy_map)
 		return (ft_exit(1));
-	x = box->size_map[0] - 1;
-	y = box->size_map[1] - 1;
+	x = box->size_map[0];
+	y = box->size_map[1];
 	i = 0;
-	while (i < x)
+	while (box->copy_map[i])
 	{
 		j = 0;
 		while (j < y)
