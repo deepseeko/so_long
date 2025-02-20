@@ -2,8 +2,8 @@ NAME = so_long
 CC = cc
 CFLAGS = -Wall -Wextra -Werror #-g3 -fsanitize=address
 RM = rm -f
-MLX_FLAG_WITH_OBJ = -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3
-MLX_FLAG = -Lmlx_linux -lmlx_Linux -lXext -lX11 -lm -lz
+MLX_FLAG_WITH_OBJ = -Wall -Wextra -Werror
+MLX_FLAG =  -lmlx -lXext -lX11 -lm
 MLCFLAGS = -Imlx -lXext -lX11
 SRCS = game/main.c \
 	game/checker.c \
