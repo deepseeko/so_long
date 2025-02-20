@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 15:34:24 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 19:53:38 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 23:09:31 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,26 +26,28 @@ void	check_all(t_data *box, int i)
 
 char	**get_map(t_data *box)
 {
-	int	i;
+	int		i;
+	char	*s ;
 
+	s = "map not valid";
 	box->map = NULL;
 	i = get_size_map(box);
 	if (i <= 0)
-		return (clear_data(box, 1), ft_exit(0), NULL);
+		return (put_error(s), clear_data(box, 1), ft_exit(0), NULL);
 	box->map = malloc(sizeof(char *) * (i + 1));
 	if (!box->map)
-		return (clear_data(box, 1), ft_exit(0), NULL);
+		return (put_error(s), clear_data(box, 1), ft_exit(0), NULL);
 	i = 0;
 	box->map[i] = get_next_line(box->fd);
 	if (!box->map[i])
-		return (clear_data(box, 1), ft_exit(0), NULL);
+		return (put_error(s), clear_data(box, 1), ft_exit(0), NULL);
 	while (box->map[i])
 	{
 		i++;
 		box->map[i] = get_next_line(box->fd);
 	}
 	if (i < 3)
-		return (clear_data(box, 1), ft_exit(0), NULL);
+		return (put_error(s), clear_data(box, 1), ft_exit(0), NULL);
 	check_all(box, i);
 	return (box->map);
 }

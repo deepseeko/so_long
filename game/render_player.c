@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:12:59 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 22:25:38 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 23:10:22 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	handle_keypress(int keycode, t_data *box)
 	new_x = box->index_player[1];
 	new_y = box->index_player[0];
 	if (keycode == 65307)
-		clear_data(box, 3);
+		return (put_error("EXIT\n"), clear_data(box, 3), 0);
 	if (keycode != KEY_W && keycode != KEY_S && keycode != KEY_A
 		&& keycode != KEY_D)
 		return (0);

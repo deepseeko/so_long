@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/17 10:21:43 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 19:53:16 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 23:06:58 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	copy_map(t_data *box)
 	i = 0;
 	box->copy_map = malloc(sizeof(char *) * (box->size_map[0] + 1));
 	if (!box->copy_map)
-		return (clear_data(box, 2), ft_exit(0));
+		return (put_error("malloc !"), clear_data(box, 2), ft_exit(0));
 	while (i < box->size_map[0] + 1)
 	{
 		box->copy_map[i] = ft_strdup(box->map[i]);
@@ -75,7 +75,8 @@ void	check_if_flooded(t_data *box)
 		while (j < y)
 		{
 			if (box->copy_map[i][j] == 'E' || box->copy_map[i][j] == 'C')
-				return (clear_data(box, 2), ft_exit(1));
+				return (put_error("map not valid"), clear_data(box, 2)
+					, ft_exit(1));
 			j++;
 		}
 		i++;

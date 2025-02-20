@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:15:51 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 19:53:48 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 22:59:36 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	check_load(t_data *box)
 		|| !box->coin_frames[2] || !box->coin_frames[3] || !box->coin_frames[4]
 		|| !box->coin_frames[5] || !box->coin_frames[6] || !box->coin_frames[7]
 		|| !box->coin_frames[8] || !box->player || !box->bg)
-		return (clear_data(box, 3), ft_exit(0));
+		return (put_error("load textures"), clear_data(box, 3), ft_exit(0));
 	if (box->number_of_enemy != 0 && !box->enemy)
-		return (clear_data(box, 3), ft_exit(0));
+		return (put_error("load textures"), clear_data(box, 3), ft_exit(0));
 }
 
 void	load_basic_textures(t_mlx *mlx_data, int img_size)
