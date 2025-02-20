@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:12:59 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 21:49:08 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 21:59:27 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	handle_keypress(int keycode, t_data *box)
 		box->moves++;
 		if (box->map[new_y][new_x] == 'M')
 			return (ft_putstr_fd("LOSER !!! ya lka3ka3\n", 1), close(2),
-					clear_data(box,3), 0);
+				clear_data(box, 3), 0);
 		update_game_state(box, new_x, new_y);
 		render_map(box->mlx_data->mlx, box->mlx_data->win, box->map, box);
 		display_stats(box);

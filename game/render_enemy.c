@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 20:37:38 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 21:37:09 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 21:59:58 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,8 @@ void	update_enemy_position(t_data *box)
 	box->index_enemy[0] = new_y;
 	box->index_enemy[1] = new_x;
 	if (box->map[new_y][new_x] == 'P')
-		return (ft_putstr_fd("LOSER !!! ya lka3ka3\n", 1), close(2),clear_data(box, 3));
+		return (ft_putstr_fd("LOSER !!! ya lka3ka3\n", 1), close(2)
+			, clear_data(box, 3));
 	box->map[new_y][new_x] = 'M';
 	render_map(box->mlx_data->mlx, box->mlx_data->win, box->map, box);
 }
