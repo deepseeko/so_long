@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:07:16 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 19:54:01 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 21:43:45 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	update_game_state(t_data *box, int new_x, int new_y)
 	if (box->map[new_y][new_x] == 'E' && box->collect == box->number_of_collect)
 	{
 		ft_putstr_fd("You win !\n", 1);
+		close(2);
 		clear_data(box, 3);
-		ft_exit(0);
 	}
 	box->map[box->index_player[0]][box->index_player[1]] = '0';
 	box->index_player[0] = new_y;
