@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:11:32 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 19:53:58 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 22:25:45 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,5 @@ void	render_map(void *mlx, void *win, char **map, t_data *box)
 		}
 		y++;
 	}
+	display_stats(box);
 }
