@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 23:32:08 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 19:05:00 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/20 19:29:13 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	count_char(a_data *box)
 		i++;
 	}
 	if (box->number_of_exit != 1 || box->number_of_player != 1
-		|| box->number_of_collect == 0 || box->number_of_enemy >= 1)
+		|| box->number_of_collect == 0 || box->number_of_enemy > 1)
 		return (clear_data(box, 1));
 }
 
