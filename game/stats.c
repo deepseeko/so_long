@@ -32,8 +32,10 @@ void	update_game_state(t_data *box, int new_x, int new_y)
 
 void	display_stats(t_data *box)
 {
-	char	*moves_str;
-	char	*collect_str;
+	char		*moves_str;
+	char		*collect_str;
+	static int	moves_cmp;
+
 
 	moves_str = ft_itoa(box->moves);
 	collect_str = ft_itoa(box->collect);
@@ -45,9 +47,14 @@ void	display_stats(t_data *box)
 		"Collect: ");
 	mlx_string_put(box->mlx_data->mlx, box->mlx_data->win, 80, 40, 0xfa7302,
 		collect_str);
-	ft_putstr_fd("Moves: ", 1);
-	ft_putnbr_fd(box->moves, 1);
-	ft_putstr_fd("\n", 1);
+	if (moves_cmp != box->moves)
+	{
+		ft_putstr_fd("Moves: ", 1);
+		ft_putnbr_fd(box->moves, 1);
+		ft_putstr_fd("\n", 1);
+		moves_cmp = box->moves;
+	}
 	free(moves_str);
 	free(collect_str);
 }
+

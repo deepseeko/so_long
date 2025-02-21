@@ -62,7 +62,7 @@ void	count_char(t_data *box)
 	}
 	if (box->number_of_exit != 1 || box->number_of_player != 1
 		|| box->number_of_collect == 0 || box->number_of_enemy > 1)
-		return (put_error("check number char !"), clear_data(box, 1));
+		return (put_error("check number char !\n"), clear_data(box, 1));
 }
 
 void	init_zero(t_data *box, int *i, int *j)

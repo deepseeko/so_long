@@ -32,7 +32,7 @@ int	handle_keypress(int keycode, t_data *box)
 			return (0);
 		box->moves++;
 		if (box->map[new_y][new_x] == 'M')
-			return (ft_putstr_fd("LOSER !!! ya lka3ka3\n", 1), close(2),
+			return (ft_putstr_fd("LOSER !!!Bo3o eats you\n", 1), close(2),
 				clear_data(box, 3), 0);
 		update_game_state(box, new_x, new_y);
 		render_map(box->mlx_data->mlx, box->mlx_data->win, box->map, box);

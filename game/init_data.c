@@ -18,6 +18,20 @@ void	init_path(char *str, t_data *box, char **splited_path)
 	free_2darr(splited_path);
 }
 
+void	init_null(t_data *box)
+{
+	box->mlx_data = NULL;
+	// box->mlx_data->win = NULL;
+	// box->wall = NULL;
+	// box->exit = NULL;
+	// box->player = NULL;
+	// box->bg = NULL;
+	// box->enemy = NULL;
+	// box->mlx_data->mlx = NULL;
+	// box->mlx_data->mlx = NULL;
+	// box->mlx_data = NULL;
+}
+
 t_data	*init_data(char **av)
 {
 	t_data	*box;
@@ -25,6 +39,7 @@ t_data	*init_data(char **av)
 	box = malloc(sizeof(t_data));
 	if (!box)
 		ft_exit(0);
+	init_null(box);
 	check_path(av[1], box);
 	check_map(box);
 	return (box);

@@ -21,7 +21,8 @@ void	ft_exit(int flag)
 
 void	put_error(char *str)
 {
-	ft_putstr_fd("Error\n", 2);
+	if (str[0] != 'E')
+		ft_putstr_fd("Error\n", 2);
 	ft_putstr_fd(str, 2);
 	close(2);
 }

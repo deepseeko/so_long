@@ -60,23 +60,23 @@ void	flood_fill_helper(t_data *box, int x, int y)
 void	check_if_flooded(t_data *box)
 {
 	int	x;
-	int	y;
+	//int	y;
 	int	i;
 	int	j;
 
 	if (!box->copy_map)
 		return (ft_exit(1));
 	x = box->size_map[0];
-	y = box->size_map[1];
+	//y = box->size_map[1] - 1;
 	i = 0;
-	while (box->copy_map[i])
+	while (i < x)
 	{
 		j = 0;
-		while (j < y)
+		while (box->copy_map[i][j])
 		{
 			if (box->copy_map[i][j] == 'E' || box->copy_map[i][j] == 'C')
-				return (put_error("map not valid"), clear_data(box, 2)
-					, ft_exit(1));
+				return (put_error("map not valid[flood]\n")
+					, clear_data(box, 2), ft_exit(1));
 			j++;
 		}
 		i++;
