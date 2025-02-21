@@ -60,14 +60,12 @@ void	flood_fill_helper(t_data *box, int x, int y)
 void	check_if_flooded(t_data *box)
 {
 	int	x;
-	//int	y;
 	int	i;
 	int	j;
 
 	if (!box->copy_map)
 		return (ft_exit(1));
 	x = box->size_map[0];
-	//y = box->size_map[1] - 1;
 	i = 0;
 	while (i < x)
 	{

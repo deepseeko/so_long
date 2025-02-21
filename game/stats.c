@@ -36,7 +36,6 @@ void	display_stats(t_data *box)
 	char		*collect_str;
 	static int	moves_cmp;
 
-
 	moves_str = ft_itoa(box->moves);
 	collect_str = ft_itoa(box->collect);
 	mlx_string_put(box->mlx_data->mlx, box->mlx_data->win, 20, 20, 0x000000,
@@ -57,4 +56,3 @@ void	display_stats(t_data *box)
 	free(moves_str);
 	free(collect_str);
 }
-
