@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:03:33 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 22:58:53 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/21 22:29:41 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	init_win(t_data *box)
 	load_textures(box->mlx_data);
 	render_map(box->mlx_data->mlx, box->mlx_data->win, box->map, box);
 	mlx_key_hook(box->mlx_data->win, handle_keypress, box);
+	mlx_hook(box->mlx_data->win, 17, 0, exit_clear, box);
 	mlx_loop_hook(box->mlx_data->mlx, timer_handler, box);
 	mlx_loop(box->mlx_data->mlx);
 }

@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 23:44:04 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 22:49:54 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/21 22:31:56 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,5 +110,6 @@ void					load_textures(t_mlx *mlx_data);
 void					check_load(t_data *box);
 void					update_coin_frame(t_data *box);
 void					put_error(char *str);
+int						exit_clear(void *box);
 
 #endif

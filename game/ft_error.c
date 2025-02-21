@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 15:56:32 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 23:07:16 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/21 22:32:22 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,10 @@ void	put_error(char *str)
 		ft_putstr_fd("Error\n", 2);
 	ft_putstr_fd(str, 2);
 	close(2);
+}
+
+int	exit_clear(void *box)
+{
+	clear_data((t_data *)box, 3);
+	return (1);
 }
