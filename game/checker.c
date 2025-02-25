@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 13:50:11 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/25 19:04:58 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/25 19:57:44 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	check_path(char *path, t_data *box)
 		return (free(box), ft_exit(0), 0);
 	path_tree = ft_split(path, '/');
 	if (!path_tree)
-		ft_exit(0);
+		return (free(box), ft_exit(0), 0);
 	dir = 0;
 	while (path_tree[dir])
 		dir++;
@@ -52,7 +52,7 @@ void	check_lent_size(t_data *box, int i)
 	box->size_map[0] = i;
 	box->size_map[1] = len;
 	if (box->size_map[0] < 3 || box->size_map[1] < 3)
-		return (put_error("map not valid"), clear_data(box, 1), ft_exit(0));
+		return (put_error("map not valid\n"), clear_data(box, 1), ft_exit(0));
 }
 
 void	ft_reset_file(t_data *box)

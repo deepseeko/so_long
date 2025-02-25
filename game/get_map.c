@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 15:34:24 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 23:09:31 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/25 19:54:00 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	**get_map(t_data *box)
 	int		i;
 	char	*s ;
 
-	s = "map not valid";
+	s = "map not valid\n";
 	box->map = NULL;
 	i = get_size_map(box);
 	if (i <= 0)
