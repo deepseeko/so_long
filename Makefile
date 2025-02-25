@@ -6,25 +6,25 @@ MLX_FLAG_WITH_OBJ = -Wall -Wextra -Werror
 MLX_FLAG =  -lmlx -lXext -lX11 -lm
 MLCFLAGS = -Imlx -lXext -lX11
 SRCS = game/main.c \
-	game/checker.c \
-	game/clear.c \
-	game/init_data.c \
-	game/load_textures.c \
-	game/check_wall.c \
-	game/check_char.c \
-	game/render_player.c \
-	game/render_enemy.c \
-	game/get_index.c \
-	game/get_map.c \
-	game/ft_error.c \
-	game/init_win.c \
-	game/stats.c \
-	game/render.c \
-	game/render_coin.c \
-	game/delay_handler.c \
-	game/check_flood_fill.c \
-	get_next_line/get_next_line.c \
-	get_next_line/get_next_line_utils.c \
+    game/checker.c \
+    game/clear.c \
+    game/init_data.c \
+    game/load_textures.c \
+    game/check_wall.c \
+    game/check_char.c \
+    game/render_player.c \
+    game/render_enemy.c \
+    game/get_index.c \
+    game/get_map.c \
+    game/ft_error.c \
+    game/init_win.c \
+    game/stats.c \
+    game/render.c \
+    game/render_coin.c \
+    game/delay_handler.c \
+    game/check_flood_fill.c \
+    get_next_line/get_next_line.c \
+    get_next_line/get_next_line_utils.c \
 
 
 OBJS = $(SRCS:.c=.o)
@@ -37,7 +37,7 @@ all: $(LIBFT) $(NAME)
 $(LIBFT):
 	make -C $(LIBFT_PATH)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(MLX_FLAG) -o $(NAME)
 
 %.o: %.c includes/solong.h
@@ -54,4 +54,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
-
+.SECONDARY: $(OBJS)

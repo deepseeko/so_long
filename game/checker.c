@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 13:50:11 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 22:57:28 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/25 19:04:58 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ int	check_path(char *path, t_data *box)
 	dir = 0;
 	while (path_tree[dir])
 		dir++;
-	if (dir == 0 || (ft_strlen(path_tree[dir - 1]) == 5
-			&& path_tree[dir - 1][ft_strlen(path_tree[dir - 1]) - 5] == '.'))
+	if (dir == 0)
 		return (free_2darr(path_tree), free(box), ft_exit(0), 0);
 	index = ft_strlen(path_tree[dir - 1]);
 	if (index > 4 && ft_strncmp(path_tree[dir - 1] + index - 4, ".ber", 4) == 0)
