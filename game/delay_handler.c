@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:20:01 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/23 15:15:03 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/26 16:12:31 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	timer_handler(void *param)
 		update_coin_frame(box);
 		cout = 0;
 	}
-	if (delay_enemy % 10007 == 0)
+	if (delay_enemy % 40007 == 0)
 	{
 		update_enemy_position(box);
 		delay_enemy = 0;
