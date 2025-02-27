@@ -114,4 +114,3 @@ int						exit_clear(void *box);
 void					get_random_position(t_data *box);
 void					check_space(t_data *box, int x, int y);
 #endif
-
