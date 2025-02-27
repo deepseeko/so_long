@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 16:07:16 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/20 22:24:15 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/27 14:49:54 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,7 @@ void	display_stats(t_data *box)
 	mlx_string_put(box->mlx_data->mlx, box->mlx_data->win, 80, 40, 0xfa7302,
 		collect_str);
 	if (moves_cmp != box->moves)
-	{
-		ft_putstr_fd("Moves: ", 1);
-		ft_putnbr_fd(box->moves, 1);
-		ft_putstr_fd("\n", 1);
 		moves_cmp = box->moves;
-	}
 	free(moves_str);
 	free(collect_str);
 }
