@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 23:44:04 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/21 22:31:56 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/27 18:30:57 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,7 @@ void					check_load(t_data *box);
 void					update_coin_frame(t_data *box);
 void					put_error(char *str);
 int						exit_clear(void *box);
-
+void					get_random_position(t_data *box);
+void					check_space(t_data *box, int x, int y);
 #endif
+

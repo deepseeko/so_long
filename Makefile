@@ -9,6 +9,7 @@ SRCS = game/main.c \
     game/checker.c \
     game/clear.c \
     game/init_data.c \
+    game/put_enemy.c \
     game/load_textures.c \
     game/check_wall.c \
     game/check_char.c \
