@@ -3,8 +3,8 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 MLX_FLAG_WITH_OBJ = -Wall -Wextra -Werror
-MLX_FLAG =  -lmlx -lXext -lX11 -lm
-MLCFLAGS = -Imlx -lXext -lX11
+MLX_FLAG =  -lmlx -lXext -lX11
+
 SRCS = game/main.c \
     game/checker.c \
     game/clear.c \

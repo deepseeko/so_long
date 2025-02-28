@@ -6,13 +6,13 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 18:20:12 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/27 18:49:22 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/28 14:09:39 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/solong.h"
 
-void check_space(t_data *box, int x, int y)
+void	check_space(t_data *box, int x, int y)
 {
 	if (box->map[y][x] == '0')
 	{
@@ -23,11 +23,11 @@ void check_space(t_data *box, int x, int y)
 	}
 }
 
-void get_random_position(t_data *box)
+void	get_random_position(t_data *box)
 {
-	int	x;
-	int	y;
-	static int get;
+	int			x;
+	int			y;
+	static int	get;
 
 	if (get)
 		return ;
@@ -50,4 +50,3 @@ void get_random_position(t_data *box)
 	get = 1;
 	write(1, "No space for enemy\n", 20);
 }
-

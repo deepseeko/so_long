@@ -6,7 +6,7 @@
 /*   By: ybouanan <ybouanan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 20:37:38 by ybouanan          #+#    #+#             */
-/*   Updated: 2025/02/27 18:31:30 by ybouanan         ###   ########.fr       */
+/*   Updated: 2025/02/28 14:09:56 by ybouanan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,11 @@ int	check_if_enemy_stopped(t_data *box)
 	x = box->index_enemy[1];
 	y = box->index_enemy[0];
 	if ((box->map[y][x + 1] == '1' || box->map[y][x + 1] == 'E' || box->map[y][x
-			+ 1] == 'C') &&
-		(box->map[y][x - 1] == '1' || box->map[y][x - 1] == 'E' || box->map[y][x
-				- 1] == 'C') &&
-		(box->map[y + 1][x] == '1' || box->map[y + 1][x] == 'E' || box->map[y
-				+ 1][x] == 'C') &&
-		(box->map[y - 1][x] == '1' || box->map[y - 1][x] == 'E' || box->map[y
-				- 1][x] == 'C'))
+			+ 1] == 'C') && (box->map[y][x - 1] == '1' || box->map[y][x
+			- 1] == 'E' || box->map[y][x - 1] == 'C') && (box->map[y
+			+ 1][x] == '1' || box->map[y + 1][x] == 'E' || box->map[y
+			+ 1][x] == 'C') && (box->map[y - 1][x] == '1' || box->map[y
+			- 1][x] == 'E' || box->map[y - 1][x] == 'C'))
 		return (1);
 	return (0);
 }
@@ -106,6 +104,7 @@ void	update_enemy_position(t_data *box)
 {
 	int	new_x;
 	int	new_y;
+
 	if (box->number_of_enemy == 0 || check_if_enemy_stopped(box))
 		return ;
 	while (!generate_valid_move(box, &new_x, &new_y))
